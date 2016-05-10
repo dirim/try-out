@@ -41,8 +41,9 @@ public class MainActivity extends ListActivity{
     private DrawerLayout mDrawerLayout;
     TextView text;
 
-    private String CLIENT_ID = "HXJS54FHTG3RU140WLLFUFEHFNRTHJLNP214F1HJKYMXE1BW";
-    private String CLIENT_SECRET = "SBNANCDRVTRQYJPIHQQI2FL2LHL0CZIU3Q3VDVXMSAUFPYBO";
+    public static String CLIENT_ID = "LYP22X4OPZVIWAWZG2ITKZJG0YPIEHRMD3KD4H33HPFSLSIR";
+    public static String CLIENT_SECRET = "FUHXUQ3NPHPJHJ0PIXPALRRKYSLR4HBEV4MD54I0WRHH42LJ";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

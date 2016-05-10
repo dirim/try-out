@@ -81,5 +81,12 @@
             android:textColor="#fff"
             android:layout_margin="40dp"
             />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/connect_to_foursquare_blue"
+            android:scrollIndicators="top|bottom" />
 </LinearLayout>
     </android.support.v4.widget.DrawerLayout>
