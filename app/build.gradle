@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.0"
 
     defaultConfig {
-        applicationId "com.saifproject.bluegape"
+        applicationId "com.saifproject.term"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1

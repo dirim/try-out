@@ -1,7 +1,6 @@
-package com.saifproject.bluegape;
+package com.saifproject.term;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -14,8 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-
-import org.w3c.dom.Text;
 
 import java.util.Random;
 

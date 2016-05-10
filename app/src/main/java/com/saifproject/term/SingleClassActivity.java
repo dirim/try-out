@@ -1,23 +1,16 @@
-package com.saifproject.bluegape;
+package com.saifproject.term;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
 import android.widget.TextView;
 
 import java.util.ArrayList;

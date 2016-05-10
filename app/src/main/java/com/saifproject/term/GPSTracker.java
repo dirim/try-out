@@ -1,4 +1,4 @@
-package com.saifproject.bluegape;
+package com.saifproject.term;
 
 import android.app.AlertDialog;
 import android.app.Service;

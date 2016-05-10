@@ -1,4 +1,4 @@
-package com.saifproject.bluegape;
+package com.saifproject.term;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 
 public class MYDBHandler extends SQLiteOpenHelper {
 
