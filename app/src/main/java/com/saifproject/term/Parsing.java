@@ -79,9 +79,10 @@ public class Parsing {
 
                     value.put(field, fieldValue);
 
-                    contactList.add(value);
                     System.out.println("Size od cintactlist in Prasing " + contactList.size());
                 }
+
+                contactList.add(value);
 
                 if (isContinue)
                     continue;
