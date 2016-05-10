@@ -59,7 +59,11 @@ public class Parsing {
                 // Storing each json item in variable
                 String id = c.getString("id");
                 String names = c.getString("name");
+
                 JSONObject location = c.getJSONObject("location");
+
+                LinkedHashMap<String, String> value = new LinkedHashMap<String, String>();
+                value.put("names", names);
 
                 boolean isContinue = false;
 
@@ -73,9 +77,6 @@ public class Parsing {
 
                     System.out.println("Name is " + names + " with id : " + id);
 
-                    LinkedHashMap<String, String> value = new LinkedHashMap<String, String>();
-
-                    value.put("names", names);
                     value.put(field, fieldValue);
 
                     contactList.add(value);
