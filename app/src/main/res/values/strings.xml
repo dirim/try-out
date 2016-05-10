@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SEARCHIT</string>
+
+    <string name="hello_world">SEARCH FOR PLACES</string>
+    <string name="action_settings">Offline Zone</string>
+    <string name="title_activity_single_class">SingleClassActivity</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="title_activity_navigation_drawer_fragment">Navigation</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="search">Places Near you ..</string>
+    <string name="title_activity_offline">offline</string>
+    <string name="title_activity_developer">Developer</string>
+    <string name="action_deve">Developer</string>
+    <string name="developer">Name : SAIF AHMED KHAN \n\n Class: B.Tech Comp Engg (VIIth Sem) \n\n College : Jamia Millia Islamia</string>
+
+
+</resources>

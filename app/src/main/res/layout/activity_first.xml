@@ -1,0 +1,85 @@
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="#123"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#37474F"
+        >
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            />
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:text="@string/hello_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            />
+        <ViewFlipper
+            android:id="@+id/myflipper"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:fadingEdge="vertical"
+            android:scrollbarSize="2dp"
+
+            >
+        </ViewFlipper>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            >
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/button_back"
+                android:hint="Search.."
+                android:paddingLeft="10dp"
+                android:textColor="#B0BEC5"
+                android:layout_gravity="center_vertical"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:onClick="show"
+            android:background="@drawable/button_back1"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_margin="40dp"
+            />
+</LinearLayout>
+    </android.support.v4.widget.DrawerLayout>
