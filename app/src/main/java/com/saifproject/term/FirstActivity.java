@@ -118,7 +118,7 @@ public class FirstActivity extends ActionBarActivity {
                 // get an intent back that would open the Play Store for download.
                 // Otherwise we start the auth flow.
                 if (FoursquareOAuth.isPlayStoreIntent(intent)) {
-                    toastMessage(FirstActivity.this, "yukle sunu amk");
+                    toastMessage(FirstActivity.this, "Upload Foursquare");
                     startActivity(intent);
                 } else {
                     startActivityForResult(intent, REQUEST_CODE_FSQ_CONNECT);

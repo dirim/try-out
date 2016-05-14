@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
-public class MYDBHandler extends SQLiteOpenHelper {
+public class 	MYDBHandler extends SQLiteOpenHelper {
 
 	public static final String dbname="Alumini";
 	public static final int ver=1;

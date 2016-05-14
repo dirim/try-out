@@ -135,7 +135,7 @@ public class SingleClassActivity extends Activity {
                         if (key == "names")
                             heading = value;
                         if (!key.equals("id") && !key.equals("names"))
-                            ans = ans + " " + key.toUpperCase() + "  IS " + value + "\n\n";
+                            ans = ans + " " + key + "  : " + value + "\n\n";
 
                         if (key.equals("lat")) {
                             lat = value;

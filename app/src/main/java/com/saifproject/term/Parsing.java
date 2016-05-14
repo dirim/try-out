@@ -17,7 +17,8 @@ import android.util.Log;
 
 public class Parsing {
 
-    private String[] fields = {"address", "lat", "lng", "distance", "city", "state", "country"};
+    private String[] fields = {"address", "lat", "lng", "distance", "city", "state"};
+
 
     Context context;
 
@@ -62,16 +63,26 @@ public class Parsing {
 
                 JSONObject location = c.getJSONObject("location");
 
+                //JSONObject categories = c.getJSONObject("categories");
+
+                //String categoriesName = categories.getString("name");
+
                 LinkedHashMap<String, String> value = new LinkedHashMap<String, String>();
                 value.put("names", names);
 
+                value.put("venueId", id);
+
+                //value.put("name", categoriesName);
+
+
                 boolean isContinue = false;
 
-                for (String field: fields) {
+                for (String field: fields ) {
                     if (!location.has(field)) {
                         isContinue = true;
                         break;
                     }
+
 
                     String fieldValue = location.getString(field);
 
@@ -79,7 +90,7 @@ public class Parsing {
 
                     value.put(field, fieldValue);
 
-                    System.out.println("Size od cintactlist in Prasing " + contactList.size());
+                    System.out.println("Size id contactlist in Prasing " + contactList.size());
                 }
 
                 contactList.add(value);
