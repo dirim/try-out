@@ -21,6 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class SingleClassActivity extends Activity {
+    private final static String TOKEN = "ZBKYOILLYWU4OEK4E3ZV4QXV32TYNQEF4NRWR2OOOYSOJGTW";
 
     ArrayList<LinkedHashMap<String, String>> cl = null;
     Parsing html;
@@ -34,6 +35,8 @@ public class SingleClassActivity extends Activity {
     String val = "0";
     LinearLayout linear1;
     Button btnLike;
+    String likeMessage;
+    TextView likeMessageView;
 
 
     @Override
@@ -78,18 +81,20 @@ public class SingleClassActivity extends Activity {
         btnLike = (Button) findViewById(R.id.btnLike);
 
         btnLike.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-                Toast.makeText(SingleClassActivity.this, "You liked this place",	Toast.LENGTH_SHORT).show();
+                try {
+                    new VenueLike().execute();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-
         });
 
         try {
             new GetContacts().execute();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -103,6 +108,44 @@ public class SingleClassActivity extends Activity {
         }
     }
 
+    private class VenueLike extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Showing progress dialog
+            pDialog = new ProgressDialog(SingleClassActivity.this);
+            pDialog.setMessage("Please wait...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            html = new Parsing();
+            String likeUrl = "https://api.foursquare.com/v2/venues/4b9158c9f964a52010b533e3/like?client_id="+MainActivity.CLIENT_ID+"&client_secret="+MainActivity.CLIENT_SECRET+"&v=20160510&oauth_token="+TOKEN;
+
+            likeMessage = html.JsonParseForLike(likeUrl, "POST");
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+
+            // Dismiss the progress dialog
+            if (pDialog.isShowing())
+                pDialog.dismiss();
+
+            btnLike.setVisibility(View.INVISIBLE);
+            likeMessageView = (TextView) findViewById(R.id.likeMessage);
+            likeMessageView.setText(likeMessage);
+            likeMessageView.setVisibility(View.VISIBLE);
+        }
+
+    }
+
     private class GetContacts extends AsyncTask<Void, Void, Void> {
 
         @Override
@@ -113,20 +156,14 @@ public class SingleClassActivity extends Activity {
             pDialog.setMessage("Please wait...");
             pDialog.setCancelable(false);
             pDialog.show();
-
-
         }
 
         @Override
         protected Void doInBackground(Void... arg0) {
-            html = new Parsing();
-
-            html.JsonParse(url);
-
 
             cl = new ArrayList<LinkedHashMap<String, String>>();
             html = new Parsing();
-            html.JsonParse(url);
+            html.JsonParse(url, "GET");
 
 //        cl.clear();
 
@@ -180,7 +217,6 @@ public class SingleClassActivity extends Activity {
 
 
         }
-
     }
 
     public void add(View view) {

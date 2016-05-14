@@ -3,6 +3,7 @@ package com.saifproject.term;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.util.Log;
 
@@ -24,7 +26,33 @@ public class Parsing {
 
     ArrayList<LinkedHashMap<String, String>> contactList;
 
-    public void JsonParse(String URL1) {
+    public String JsonParseForLike(String URL1, String requestMethod) {
+        String summary = "";
+
+        try {
+            // instantiate our json parser
+            JsonParser jParser = new JsonParser();
+
+            // set your json string url here
+            System.out.println("Value of URL at Parsing class is " + URL1);
+
+            // get json string from url
+            JSONObject json = jParser.getJSONFromUrl(URL1, requestMethod);
+
+            // get the array of users
+            JSONObject responseData = json.getJSONObject("response");
+            summary = responseData.getJSONObject("likes").getString("summary");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+
+        }
+
+        return summary;
+
+    }
+
+    public void JsonParse(String URL1, String requestMethod) {
         contactList = new ArrayList<LinkedHashMap<String, String>>();
 
         String logoLink = null;
@@ -42,7 +70,7 @@ public class Parsing {
             JSONArray dataJsonArr = null;
 
             // get json string from url
-            JSONObject json = jParser.getJSONFromUrl(URL1);
+            JSONObject json = jParser.getJSONFromUrl(URL1, requestMethod);
 
             // get the array of users
             JSONObject responseData = json.getJSONObject("response");
@@ -106,7 +134,6 @@ public class Parsing {
 
     }
 
-
     public class JsonParser {
 
         final String TAG = "JsonParser.java";
@@ -115,12 +142,13 @@ public class Parsing {
         JSONObject jObj = null;
         String json = "";
 
-        public JSONObject getJSONFromUrl(String ul) {
+        public JSONObject getJSONFromUrl(String ul, String requestMethod) {
             System.out.println("Inside jsonparser class");
 
             try {
                 URL url = new URL(ul);
-                URLConnection connection = url.openConnection();
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod(requestMethod);
                 //connection.addRequestProperty("Referer", "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=%22mixorg.com%22&rsz=8");
 
                 String line;

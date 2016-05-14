@@ -137,7 +137,7 @@ public class MainActivity extends ListActivity{
         protected Void doInBackground(Void... arg0) {
             html = new Parsing();
 
-            html.JsonParse(url);
+            html.JsonParse(url, "GET");
 
             contactList = new ArrayList<LinkedHashMap<String, String>>();
             contactList.clear();
