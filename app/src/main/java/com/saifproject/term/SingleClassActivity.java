@@ -10,8 +10,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,6 +33,8 @@ public class SingleClassActivity extends Activity {
     MYDBHandler dbhander;
     String val = "0";
     LinearLayout linear1;
+    Button btnLike;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,9 +74,17 @@ public class SingleClassActivity extends Activity {
         // Displaying all values on the screen
         lblName = (TextView) findViewById(R.id.name_label);
         lblEmail = (TextView) findViewById(R.id.email_label);
-//        Typeface typeface=Typeface.createFromAsset(getAssets(), "fonts/androidnation.ttf");
-//        lblName.setTypeface(typeface);
 
+        btnLike = (Button) findViewById(R.id.btnLike);
+
+        btnLike.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SingleClassActivity.this, "You liked this place",	Toast.LENGTH_SHORT).show();
+            }
+
+        });
 
         try {
             new GetContacts().execute();
@@ -182,4 +194,5 @@ public class SingleClassActivity extends Activity {
                 .show();
 
     }
+
 }

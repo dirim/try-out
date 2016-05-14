@@ -236,7 +236,6 @@ public class FirstActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_first, menu);
-        getMenuInflater().inflate(R.menu.menu_developer, menu);
         return true;
     }
 
@@ -252,10 +251,6 @@ public class FirstActivity extends ActionBarActivity {
 
             Intent i=new Intent(FirstActivity.this,offline.class);
             startActivity(i);
-            return true;
-        }
-        else if (id == R.id.action_deve) {
-            startActivity(new Intent(this,Developer.class));
             return true;
         }
 

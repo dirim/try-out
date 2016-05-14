@@ -31,7 +31,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="4"
+        android:layout_weight="2.07"
         >
 
     <TextView android:id="@+id/email_label"
@@ -50,8 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1"
-        >
+        android:layout_weight="0.55">
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
@@ -65,17 +64,36 @@
         android:layout_weight="1"
         />
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn1"
         android:layout_centerHorizontal="true"
         android:text="Add for offline"
+        android:layout_margin="20dp"
         android:onClick="add"
         android:layout_weight="1"
         android:background="@drawable/button_back1"
         android:textColor="#fff"
 
-        />
+        android:id="@+id/button2" />
+
+        <Button
+
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Like"
+            android:id="@+id/btnLike"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/button2"
+            android:background="@drawable/button_back1"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:onClick="onClick"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true" />
+
     </RelativeLayout>
 
 </LinearLayout>

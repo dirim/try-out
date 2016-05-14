@@ -63,17 +63,14 @@ public class Parsing {
 
                 JSONObject location = c.getJSONObject("location");
 
-                //JSONObject categories = c.getJSONObject("categories");
-
-                //String categoriesName = categories.getString("name");
+                JSONObject category = c.getJSONArray("categories").getJSONObject(0);
+                String catName = category.getString("name");
 
                 LinkedHashMap<String, String> value = new LinkedHashMap<String, String>();
                 value.put("names", names);
 
                 value.put("venueId", id);
-
-                //value.put("name", categoriesName);
-
+                value.put("name", catName);
 
                 boolean isContinue = false;
 
