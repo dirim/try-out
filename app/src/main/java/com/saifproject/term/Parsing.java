@@ -98,7 +98,7 @@ public class Parsing {
                 value.put("names", names);
 
                 value.put("venueId", id);
-                value.put("name", catName);
+                value.put("category", catName);
 
                 boolean isContinue = false;
 

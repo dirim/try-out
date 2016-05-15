@@ -197,7 +197,6 @@ public class SingleClassActivity extends Activity {
                 counter++;
             }
 
-
             return null;
         }
 

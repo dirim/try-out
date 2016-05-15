@@ -9,6 +9,10 @@
     android:background="#123"
     >
 
+    <ScrollView android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -88,5 +92,6 @@
             android:background="@drawable/connect_to_foursquare_blue"
             android:scrollIndicators="top|bottom" />
 
-</LinearLayout>
+    </LinearLayout>
+    </ScrollView>
     </android.support.v4.widget.DrawerLayout>
